@@ -1,0 +1,402 @@
+/* Genel Stil Ayarları */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Daha modern bir font */
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Sayfanın taşmasını engelle */
+    background-color: #f5f7fa; /* Arka plana daha yumuşak bir renk */
+}
+
+/* Navbar Stilleri */
+.navbar {
+    background-color: #2C3E50; /* Koyu ve modern bir navbar rengi */
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-buttons button {
+    background-color: #E74C3C; /* Canlı kırmızı tonları */
+    color: white;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 30px; /* Daha yuvarlak hatlar */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover efekti için yumuşak geçiş */
+}
+
+.navbar-buttons button:hover {
+    background-color: #C0392B;
+    transform: scale(1.05); /* Hover anında büyüme efekti */
+}
+
+/* Harita Alanı */
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0; /* Diğer elemanlar haritanın üzerinde olacak */
+}
+
+/* Panel Stilleri */
+.jspanel {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Köşeleri daha yuvarlat */
+    display: none;
+}
+
+.jspanel h3 {
+    margin: 10px 0;
+    color: #34495E; /* Başlıklar için koyu ton */
+}
+
+.jspanel p {
+    margin: 10px 0;
+    color: #7F8C8D; /* Daha yumuşak tonlar */
+}
+
+.jspanel input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.jspanel button {
+    background-color: #3498DB; /* Parlak mavi */
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.jspanel button:hover {
+    background-color: #2980B9;
+}
+
+.jspanel .close-panel-btn {
+    background-color: #E74C3C;
+    border: none;
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Tablo ve Query Panel Stilleri */
+/* Points Table Styling */
+.query-panel {
+    position: fixed;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+}
+
+.table-header h2 {
+    font-size: 1.8em;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+#points-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+#points-table th, 
+#points-table td {
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+}
+
+#points-table th {
+    background-color: #3498DB;
+    color: white;
+    text-transform: uppercase;
+}
+
+#points-table tbody tr:nth-child(even) {
+    background-color: #ECF0F1;
+}
+
+#points-table tbody tr:hover {
+    background-color: #D5DBDB;
+}
+
+/* Buttons Styling */
+.table-container button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+
+.table-container button.update-btn {
+    background-color: #3498DB;
+    color: white;
+}
+
+.table-container button.update-btn:hover {
+    background-color: #2980B9;
+}
+
+.table-container button.show-btn {
+    background-color: #9B59B6;
+    color: white;
+}
+
+.table-container button.show-btn:hover {
+    background-color: #8E44AD;
+}
+
+.table-container button.delete-btn {
+    background-color: #E74C3C;
+    color: white;
+}
+
+.table-container button.delete-btn:hover {
+    background-color: #C0392B;
+}
+
+/* Close Button */
+.close-btn {
+    background-color: #34495E;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    float: right;
+}
+
+.close-btn:hover {
+    background-color: #555;
+}
+
+/* Search and Pagination */
+.dataTables_filter {
+    float: right;
+}
+
+.dataTables_length {
+    float: left;
+}
+
+.dataTables_info, 
+.dataTables_paginate {
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 8px 16px;
+    margin-left: 5px;
+    background-color: #3498DB;
+    color: white !important;
+    border-radius: 6px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #2980B9;
+}
+
+/* Onay Paneli */
+.confirmation-panel {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+}
+
+.confirmation-panel button {
+    margin: 10px;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#confirm-delete {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+}
+
+#cancel-delete {
+    background-color: #95A5A6;
+    border: none;
+}
+
+/* Modal (Update Seçenekleri) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.close-update-options {
+    color: #E74C3C;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-content button {
+    margin-top: 12px;
+    padding: 12px;
+    width: 100%;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #2980B9;
+}
+
+#finish-drawing, #finish-polygon-drawing {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C0392B;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+/* Tablo Stil (DataTable için) */
+table.dataTable thead th {
+    background-color: #ECF0F1;
+    color: #333;
+}
+
+table.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.dataTable td, table.dataTable th {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+#mapUpdateSaveBtn {
+    background-color: #45a049;
+    border: none;
+    color: rgb(246, 231, 242);
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 120px;
+    height: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  #mapUpdateSaveBtn:hover {
+    background-color: #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  #return-to-panel {
+    background-color: #b6ea1b;
+    border: none;
+    color: rgb(211, 16, 16);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 1000; /* Z-index değeri arttırıldı */
+    position: absolute; /* Butonun pozisyonunu ayarlamak için */
+    bottom: 20px; /* Ekranın altına yerleştirildi */
+    right: 20px; /* Sağ tarafa yerleştirildi */
+  }
+  
+  #return-to-panel:hover {
+    background-color: #45a049;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
